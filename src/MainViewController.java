@@ -1,14 +1,13 @@
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 
-import java.awt.*;
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Optional;
 
 public class MainViewController {
 	public static ArrayList<Rule> rules = new ArrayList<Rule>();
@@ -33,6 +32,9 @@ public class MainViewController {
 	public Button ruleSaveButton;
 	@FXML
 	public Button ruleLoadButton;
+
+	@FXML
+	public TextArea outputArea;
 	
 	@FXML
 	public void handleLoad() throws IOException {
@@ -159,7 +161,6 @@ public class MainViewController {
 			
 			for(Rule r : rules){
 				if (r.canApply(words.get(words.size()-1))){
-					System.out.println(words.get(words.size()-1));
 					words.add(r.apply(words.get(words.size()-1)));
 					if (r.isLast())
 						break m;
@@ -171,27 +172,36 @@ public class MainViewController {
 			break;
 			
 		}
-		File f = new File(words.get(0) + ".txt");;
-		try{
-			f.getCanonicalFile();
-			
+
+		StringBuilder builder = new StringBuilder("");
+		for (String s : words) {
+			builder.append(s);
+			builder.append("\n");
 		}
-		catch(Exception e){
-			f = new File("FILENAME_ERROR.txt");
-		}
-		
-		BufferedWriter bw = new BufferedWriter(new FileWriter(f));
-		for(String word : words){
-			bw.write(word);
-			bw.newLine();
-		}
-		bw.close();
-		Desktop.getDesktop().open(f);
-		
-		System.out.println(words.get(words.size()-1));
-			
+
+		outputArea.setText(builder.toString());
 	}
-	
-	
-	
+
+	@FXML
+	public void handleInfiniteLoop() throws IOException {
+		for (int i = 0; i < rules.size(); i++){
+			Rule temporaryRule = rules.get(i);
+			for (int j = 0; j < rules.size(); j++){
+				Rule ruleToCompareWith = rules.get(j);
+				if (temporaryRule.getTo().equals(ruleToCompareWith.getFrom()) && temporaryRule.getFrom().equals(ruleToCompareWith.getTo())){
+					Alert infiniteLoopConfirmation = new Alert(Alert.AlertType.CONFIRMATION);
+					infiniteLoopConfirmation.setTitle("Виявлено зациклення");
+					infiniteLoopConfirmation.setHeaderText("У ваших правилах було виявлено зациклення.");
+					infiniteLoopConfirmation.setContentText("Ви точно хочете продовжити?");
+
+					Optional<ButtonType> type = infiniteLoopConfirmation.showAndWait();
+					if (type.get() == ButtonType.OK){
+						handleCalculate();
+						return;
+					}else return;
+				}
+			}
+		}
+		handleCalculate();
+	}
 }

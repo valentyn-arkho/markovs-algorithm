@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="643.0" style="-fx-background-color: #FFC373;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainViewController">
    <children>
-      <Button layoutX="534.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleCalculate" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #7373D9;" text="Розв`язати" textFill="WHITE" AnchorPane.rightAnchor="12.0">
+      <Button layoutX="534.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleInfiniteLoop" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #7373D9;" text="Розв`язати" textFill="WHITE" AnchorPane.rightAnchor="12.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Label alignment="CENTER" layoutX="155.0" layoutY="24.0" prefHeight="25.0" prefWidth="299.0" text="Правила" textFill="#7373d9" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="146.0">
+      <Label alignment="CENTER" layoutX="155.0" layoutY="4.0" prefHeight="25.0" prefWidth="299.0" text="Правила" textFill="#7373d9" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="146.0">
          <font>
-            <Font name="Calibri Bold" size="18.0" />
+            <Font name="Montserrat-Regular" size="33.0" />
          </font></Label>
       <TextField fx:id="ruleLeftTextField" layoutX="151.0" layoutY="55.0" prefHeight="25.0" prefWidth="113.0" />
       <Label layoutX="310.0" layoutY="49.0" prefHeight="17.0" prefWidth="113.0" text="=&gt;">
@@ -25,16 +30,12 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <ListView fx:id="ruleListView" layoutX="11.0" layoutY="95.0" prefHeight="214.0" prefWidth="623.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="9.0" />
+      <ListView fx:id="ruleListView" layoutX="11.0" layoutY="95.0" minHeight="214.0" minWidth="307.0" prefHeight="214.0" prefWidth="307.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="325.0" />
       <Label layoutX="10.0" layoutY="345.0" text="Вхідне слово" textFill="#7373d9">
          <font>
             <Font name="Calibri Bold Italic" size="14.0" />
          </font></Label>
       <TextField fx:id="wordTextField" layoutX="14.0" layoutY="362.0" prefHeight="25.0" prefWidth="499.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="134.0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="77.0" layoutY="3.0" text="НОРМАЛЬНІ АЛГОРИТМИ МАРКОВА" textFill="#7373d9" AnchorPane.leftAnchor="77.0" AnchorPane.rightAnchor="67.0">
-         <font>
-            <Font name="Calibri Bold Italic" size="18.0" />
-         </font></Label>
       <Button layoutX="151.0" layoutY="320.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleUp" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #7373D9;" text="Вверх" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -60,5 +61,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <TextArea fx:id="outputArea" editable="false" layoutX="325.0" layoutY="95.0" minHeight="214.0" minWidth="307.0" prefHeight="214.0" prefWidth="307.0" />
    </children>
 </AnchorPane>
