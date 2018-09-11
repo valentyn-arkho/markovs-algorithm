@@ -39,6 +39,8 @@ public class MainViewController {
 	@FXML
 	public void handleLoad() throws IOException {
 		FileChooser fc = new FileChooser();
+		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+		fc.getExtensionFilters().add(extFilter);
 		fc.setTitle("Виберіть файл з правилами");
 		fc.setInitialDirectory(new File(System.getProperty("user.dir")));
 		File tempFile = fc.showOpenDialog(Main.inst.stage);
@@ -189,16 +191,11 @@ public class MainViewController {
 			for (int j = 0; j < rules.size(); j++){
 				Rule ruleToCompareWith = rules.get(j);
 				if (temporaryRule.getTo().equals(ruleToCompareWith.getFrom()) && temporaryRule.getFrom().equals(ruleToCompareWith.getTo())){
-					Alert infiniteLoopConfirmation = new Alert(Alert.AlertType.CONFIRMATION);
+					Alert infiniteLoopConfirmation = new Alert(Alert.AlertType.INFORMATION);
 					infiniteLoopConfirmation.setTitle("Виявлено зациклення");
-					infiniteLoopConfirmation.setHeaderText("У ваших правилах було виявлено зациклення.");
-					infiniteLoopConfirmation.setContentText("Ви точно хочете продовжити?");
-
-					Optional<ButtonType> type = infiniteLoopConfirmation.showAndWait();
-					if (type.get() == ButtonType.OK){
-						handleCalculate();
-						return;
-					}else return;
+					infiniteLoopConfirmation.setHeaderText("У ваших правилах було виявлено зациклення. Алгоритм не зможе завершити роботу.");
+					infiniteLoopConfirmation.show();
+					return;
 				}
 			}
 		}

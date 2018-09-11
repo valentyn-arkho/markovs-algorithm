@@ -58,7 +58,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="10.0" layoutY="55.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleSave" prefHeight="25.0" prefWidth="97.0" styleClass="buttons_style" stylesheets="@css/styles.css" text="Зберегти">
+      <Button layoutX="10.0" layoutY="55.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleSave" prefHeight="25.0" prefWidth="97.0" styleClass="buttons_style" stylesheets="@css/styles.css" text="Зберегти" textFill="#1a1c90">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

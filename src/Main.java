@@ -23,6 +23,7 @@ public class Main extends Application {
 
 			stage = primaryStage;
 
+			primaryStage.setTitle("Markov's normal algorithmsgit ");
 			primaryStage.setScene(scene);
 			primaryStage.setResizable(false);
 			primaryStage.show();

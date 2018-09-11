@@ -8,5 +8,5 @@
 
 .buttons_style:hover {
     -fx-background-color: rgb(53, 167, 110);
-    box-shadow: 0 3px rgb(33,147,90) inset;
+    -fx-box-shadow: 0 3px rgb(33,147,90) inset;
 }
