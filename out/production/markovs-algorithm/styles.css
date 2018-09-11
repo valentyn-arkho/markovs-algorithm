@@ -1,0 +1,12 @@
+.buttons_style{
+    -fx-font-weight: 700;
+    -background-color: rgb(64,199,129);
+    -fx-text-decoration: none;
+    -fx-border-radius: 3px;
+    -fx-transition: 0.2s;
+}
+
+.buttons_style:hover {
+    -fx-background-color: rgb(53, 167, 110);
+    box-shadow: 0 3px rgb(33,147,90) inset;
+}

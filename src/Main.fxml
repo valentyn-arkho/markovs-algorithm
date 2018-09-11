@@ -5,18 +5,25 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="643.0" style="-fx-background-color: #FFC373;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="641.0" style="-fx-background-color: #FFC373;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainViewController">
    <children>
-      <Button layoutX="534.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleInfiniteLoop" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #7373D9;" text="Розв`язати" textFill="WHITE" AnchorPane.rightAnchor="12.0">
+      <ImageView fitHeight="441.0" fitWidth="662.0" layoutX="-7.0" layoutY="-7.0">
+         <image>
+            <Image url="@img/wallpaper.wiki-Photos-Black-Velvet-HD-PIC-WPC009208.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="533.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleInfiniteLoop" prefHeight="25.0" prefWidth="97.0" styleClass="buttons_style" stylesheets="@css/styles.css" text="Розв`язати" textFill="#1a1c90" AnchorPane.rightAnchor="11.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Label alignment="CENTER" layoutX="155.0" layoutY="4.0" prefHeight="25.0" prefWidth="299.0" text="Правила" textFill="#7373d9" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="146.0">
+      <Label alignment="CENTER" layoutX="148.0" layoutY="-13.0" prefHeight="25.0" prefWidth="299.0" text="Правила" textFill="WHITE" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="153.0">
          <font>
-            <Font name="Montserrat-Regular" size="33.0" />
+            <Font name="Christmas ScriptC" size="48.0" />
          </font></Label>
       <TextField fx:id="ruleLeftTextField" layoutX="151.0" layoutY="55.0" prefHeight="25.0" prefWidth="113.0" />
       <Label layoutX="310.0" layoutY="49.0" prefHeight="17.0" prefWidth="113.0" text="=&gt;">
@@ -25,42 +32,42 @@
          </font>
       </Label>
       <TextField fx:id="ruleRightTextField" layoutX="385.0" layoutY="55.0" prefHeight="25.0" prefWidth="113.0" />
-      <Button fx:id="addRuleButton" layoutX="534.0" layoutY="55.0" mnemonicParsing="false" onMouseClicked="#handleAddRule" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #7373D9;" text="Додати" textFill="WHITE">
+      <Button fx:id="addRuleButton" layoutX="542.0" layoutY="55.0" mnemonicParsing="false" onMouseClicked="#handleAddRule" prefHeight="25.0" prefWidth="97.0" styleClass="buttons_style" stylesheets="@css/styles.css" text="Додати" textFill="#1a1c90">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
       <ListView fx:id="ruleListView" layoutX="11.0" layoutY="95.0" minHeight="214.0" minWidth="307.0" prefHeight="214.0" prefWidth="307.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="325.0" />
-      <Label layoutX="10.0" layoutY="345.0" text="Вхідне слово" textFill="#7373d9">
+      <Label layoutX="10.0" layoutY="345.0" text="Вхідне слово" textFill="WHITE">
          <font>
             <Font name="Calibri Bold Italic" size="14.0" />
          </font></Label>
-      <TextField fx:id="wordTextField" layoutX="14.0" layoutY="362.0" prefHeight="25.0" prefWidth="499.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="134.0" />
-      <Button layoutX="151.0" layoutY="320.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleUp" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #7373D9;" text="Вверх" textFill="WHITE">
+      <TextField fx:id="wordTextField" layoutX="14.0" layoutY="362.0" prefHeight="25.0" prefWidth="484.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="147.0" />
+      <Button layoutX="151.0" layoutY="320.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleUp" prefHeight="25.0" prefWidth="62.0" styleClass="buttons_style" stylesheets="@css/styles.css" text="Вверх" textFill="#1a1c90">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="446.0" layoutY="320.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleDown" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #7373D9;" text="Вниз" textFill="WHITE">
+      <Button layoutX="442.0" layoutY="320.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleDown" prefHeight="25.0" prefWidth="62.0" styleClass="buttons_style" stylesheets="@css/styles.css" text="Вниз" textFill="#1a1c90">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="337.0" layoutY="320.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLoad" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #7373D9;" text="Завантажити" textFill="WHITE">
+      <Button layoutX="333.0" layoutY="320.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLoad" prefHeight="25.0" prefWidth="97.0" styleClass="buttons_style" stylesheets="@css/styles.css" text="Завантажити" textFill="#1a1c90">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="15.0" layoutY="55.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleSave" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #7373D9;" text="Зберегти" textFill="WHITE">
+      <Button layoutX="10.0" layoutY="55.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleSave" prefHeight="25.0" prefWidth="97.0" styleClass="buttons_style" stylesheets="@css/styles.css" text="Зберегти">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="226.0" layoutY="320.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRuleDeletion" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #7373D9;" text="Видалити" textFill="WHITE">
+      <Button layoutX="229.0" layoutY="320.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRuleDeletion" prefHeight="25.0" prefWidth="97.0" styleClass="buttons_style" stylesheets="@css/styles.css" text="Видалити" textFill="#1a1c90">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TextArea fx:id="outputArea" editable="false" layoutX="325.0" layoutY="95.0" minHeight="214.0" minWidth="307.0" prefHeight="214.0" prefWidth="307.0" />
+      <TextArea fx:id="outputArea" editable="false" layoutX="333.0" layoutY="95.0" minHeight="214.0" minWidth="307.0" prefHeight="214.0" prefWidth="307.0" />
    </children>
 </AnchorPane>
