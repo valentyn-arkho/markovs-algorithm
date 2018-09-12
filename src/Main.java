@@ -19,8 +19,6 @@ public class Main extends Application {
             loader.setLocation(Main.class.getResource("Main.fxml"));
             Scene scene = new Scene((AnchorPane)loader.load());
 
-			scene.getStylesheets().add(getClass().getResource("css/styles.css").toExternalForm());
-
 			stage = primaryStage;
 
 			primaryStage.setTitle("Markov's normal algorithms");

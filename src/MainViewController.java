@@ -1,4 +1,5 @@
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
@@ -35,6 +36,25 @@ public class MainViewController {
 
 	@FXML
 	public TextArea outputArea;
+
+	@FXML
+	private MenuItem quitMenuItem;
+
+	@FXML
+	private MenuItem aboutMenuItem;
+
+	@FXML
+	void quitProgram(ActionEvent event) {
+		Platform.exit();
+	}
+
+	@FXML
+	void showAbout(ActionEvent event) {
+		Alert infiniteLoopConfirmation = new Alert(Alert.AlertType.INFORMATION);
+		infiniteLoopConfirmation.setTitle("Про програму");
+		infiniteLoopConfirmation.setHeaderText("Цей додаток було розроблено студентами кафедри ПЗКС ЧНУ\n Бузіловим Олексієм Валентиновичем та Вишиваном Валентином Анатолійовичем.");
+		infiniteLoopConfirmation.show();
+	}
 	
 	@FXML
 	public void handleLoad() throws IOException {
